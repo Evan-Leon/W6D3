@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Artwork < ApplicationRecord
+  validates :
 
     belongs_to :artist,
       primary_key: :id,
