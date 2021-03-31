@@ -2,3 +2,44 @@
   ↳ bin/rails:9
   [1m[35m (122.4ms)[0m  [1m[35mCREATE DATABASE "art_share_test" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-03-31 15:12:15 -0400
+
+ActiveRecord::NoDatabaseError - FATAL:  database "art_share_development" does not exist:
+
+Started POST "/__better_errors/e6a44fb52d099f11/variables" for ::1 at 2021-03-31 15:12:18 -0400
+  [1m[35m (6696.4ms)[0m  [1m[35mCREATE DATABASE "art_share_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (6075.9ms)[0m  [1m[35mCREATE DATABASE "art_share_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-03-31 15:15:08 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb (18.3ms)
+Completed 200 OK in 90ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2021-03-31 15:18:22 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant UsersController::User:
+  app/controllers/users_controller.rb:3:in `index'
+
+Started GET "/users" for ::1 at 2021-03-31 15:21:37 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant UsersController::User:
+  app/controllers/users_controller.rb:3:in `index'
+
+Started GET "/users" for ::1 at 2021-03-31 15:22:13 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
