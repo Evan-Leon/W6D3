@@ -72,3 +72,149 @@ Migrating to CreateUsers (20210331193908)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (11971.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (475.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (97.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (24.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1682527628878363470)[0m
+  ↳ bin/rails:9
+  [1m[35m (20.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210331193908)
+  [1m[35m (14.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (249.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210331193908_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (91.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210331193908"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (23.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (14.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-31 20:04:05.964995"], ["updated_at", "2021-03-31 20:04:05.964995"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1682527628878363470)[0m
+  ↳ bin/rails:9
+  [1m[35m (21.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (14.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (24.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Julia"], ["email", "julia@julia.com"], ["created_at", "2021-03-31 20:04:32.717211"], ["updated_at", "2021-03-31 20:04:32.717211"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (13.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Evan"], ["email", "evan@julia.com"], ["created_at", "2021-03-31 20:04:32.765515"], ["updated_at", "2021-03-31 20:04:32.765515"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+Started GET "/users" for ::1 at 2021-03-31 16:05:16 -0400
+  [1m[35m (23.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (73.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 442ms (Views: 31.7ms | ActiveRecord: 370.1ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-31 16:05:39 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 142ms (Views: 0.9ms | ActiveRecord: 52.4ms)
+
+
+Started POST "/users/" for ::1 at 2021-03-31 16:08:30 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":create"=>"name = 'ara', email = 'ara@julia.com'"}}
+Unpermitted parameter: ::create
+  [1m[35m (76.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (118.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-03-31 20:08:30.979703"], ["updated_at", "2021-03-31 20:08:30.979703"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (185.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 427ms (ActiveRecord: 380.0ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "name" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (3, null, null, 2021-03-31 20:08:30.979703, 2021-03-31 20:08:30.979703).
+: INSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id":
+  app/controllers/users_controller.rb:16:in `create'
+
+Started POST "/users/" for ::1 at 2021-03-31 16:09:33 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":create"=>"'name' = 'ara', 'email' = 'ara@julia.com'"}}
+Unpermitted parameter: ::create
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (204.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-03-31 20:09:33.975535"], ["updated_at", "2021-03-31 20:09:33.975535"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (65.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 274.2ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "name" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (4, null, null, 2021-03-31 20:09:33.975535, 2021-03-31 20:09:33.975535).
+: INSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id":
+  app/controllers/users_controller.rb:16:in `create'
+
+Started POST "/users/" for ::1 at 2021-03-31 16:11:27 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":create"=>"'name' = 'ara', 'email' = 'ara@julia.com'"}}
+Unpermitted parameter: ::create
+Started POST "/users/" for ::1 at 2021-03-31 16:14:02 -0400
+  [1m[35m (65.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":create"=>"user[:name] = 'ara', user[:email] = 'ara@julia.com'"}}
+Unpermitted parameter: ::create
+  [1m[35m (42.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (17.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-03-31 20:16:11.311965"], ["updated_at", "2021-03-31 20:16:11.311965"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (24.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 126930ms (ActiveRecord: 362.4ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "name" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (5, null, null, 2021-03-31 20:16:11.311965, 2021-03-31 20:16:11.311965).
+: INSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id":
+  app/controllers/users_controller.rb:16:in `create'
+
+Started POST "/users/" for ::1 at 2021-03-31 16:16:16 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"'ara'", ":email"=>"'ara@julia.com'"}}
+Unpermitted parameters: ::name, ::email
+  [1m[35m (86.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (5.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-03-31 20:16:33.782236"], ["updated_at", "2021-03-31 20:16:33.782236"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (98.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 16904ms (ActiveRecord: 190.4ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "name" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (6, null, null, 2021-03-31 20:16:33.782236, 2021-03-31 20:16:33.782236).
+: INSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id":
+  app/controllers/users_controller.rb:16:in `create'
+
