@@ -26,7 +26,7 @@ class ArtworkSharesController < ApplicationController
         # debugger
      if artworkshare.update(artworkshare_params)
         # debugger
-        redirect_to artwork_url(artworkshare)
+        redirect_to artwork_share_url(artworkshare)
         # render json: artworkshare
     else  
         render json: artworkshare.errors.full_messages, status: 422
@@ -35,8 +35,11 @@ class ArtworkSharesController < ApplicationController
 
   def destroy 
     artworkshare = ArtworkShare.find(params[:id])
+    debugger
     artworkshare.destroy
-    redirect_to artworks_url 
+    debugger
+    redirect_to artwork_share_url
+    debugger    
   end
 
   protected
