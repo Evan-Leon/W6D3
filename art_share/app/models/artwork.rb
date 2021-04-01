@@ -24,13 +24,14 @@ class Artwork < ApplicationRecord
 
     has_many :shared_viewers,
       through: :artwork_shares,
-      source: :viewers 
+      source: :viewer 
 
 
     def self.artworks_for_user_id(user_id)
-        Artwork
-          .joins(:shared_viewers)
-          .slect('users.artwork')
-          .where(users: {id:user_id})
+        Artwork.joins(:shared_viewers).where("users.id = ?", user_id)
+    end
+
+     def self.shared_artworks_for_user_id(user_id)
+        Artwork.joins(:shared_viewers).where("users.id = ?", user_id)
     end
 end
