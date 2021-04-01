@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Artwork < ApplicationRecord
-  validates :
+  validates :artist_id, uniqueness: { scope: :title}
 
     belongs_to :artist,
       primary_key: :id,

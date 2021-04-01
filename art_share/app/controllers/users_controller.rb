@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if user.save
         render json: user 
     else  
-        render json: song.errors.full_messages, status: 422 
+        render json: user.errors.full_messages, status: 422 
     end
         
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
      if user.update(user_params)
         redirect_to user_url(user) 
     else  
-        render json: song.errors.full_messages, status: 422
+        render json: user.errors.full_messages, status: 422
     end
 
   end
@@ -37,9 +37,9 @@ class UsersController < ApplicationController
     user.destory
     redirect_to users_url 
   end
-
+  protected
   def user_params
-    params.require(:user).permit(:name, :email)
+    self.params.require(:user).permit(:username)
   end
 
 end
