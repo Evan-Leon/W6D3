@@ -8,8 +8,12 @@
 
 Artwork.destroy_all
 User.destroy_all
+ArtworkShare.destroy_all
 julia = User.create!(username: 'Julia')
 evan = User.create!(username: 'Evan')
-Artwork.create!(title: 'Art1', image_url:'img.com', artist_id: julia.id)
-Artwork.create!(title: 'Art2', image_url:'img.com', artist_id: evan.id)
+art1 = Artwork.create!(title: 'Art1', image_url:'img.com', artist_id: julia.id)
+art2 = Artwork.create!(title: 'Art2', image_url:'img.com', artist_id: evan.id)
+ArtworkShare.create!(artwork_id: art1.id, viewer_id: julia.id)
+ArtworkShare.create!(artwork_id: art2.id, viewer_id: evan.id)
+
 
