@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   # get  "/users/new", to: "users#new"
   # put "/users/:id", to: "users#update"
 
-  resources :users
+  resources :users do
+    resources :artworks, only: [:index]
+  end
+    
+   resources :artworks, only: [:create, :show, :update, :destroy]
+
+  resources :artwork_shares
 end
