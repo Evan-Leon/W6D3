@@ -12,6 +12,8 @@
 class Artwork < ApplicationRecord
   validates :artist_id, uniqueness: { scope: :title}
 
+  
+
     belongs_to :artist,
       primary_key: :id,
       foreign_key: :artist_id,
@@ -25,4 +27,11 @@ class Artwork < ApplicationRecord
     has_many :shared_viewers,
       through: :artwork_shares,
       source: :viewers 
+
+
+    def self.artworks_for_user_id(user_id)
+        Artwork 
+          .joins(artwork_shares)
+
+    end
 end

@@ -35,11 +35,10 @@ class ArtworkSharesController < ApplicationController
 
   def destroy 
     artworkshare = ArtworkShare.find(params[:id])
-    debugger
+
     artworkshare.destroy
-    debugger
-    redirect_to artwork_share_url
-    debugger    
+
+    redirect_to "http://localhost:3000/artwork_shares" 
   end
 
   protected

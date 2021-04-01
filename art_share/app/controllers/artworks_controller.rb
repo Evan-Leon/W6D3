@@ -1,9 +1,13 @@
 class ArtworksController < ApplicationController
 
     def index 
-        # user = User.find(params[:id])
-        artworks = Artwork.all
-        render json: artworks 
+    
+        user = User.find(params[:user_id])
+        # render_hash = {:users =>  
+        render json: {user.artworks, user.artwork_shares}  
+
+        # shares = ArtworkShare.find(params[:user_id])
+        # render json: user.artwork_shares
     end
 
     def show
