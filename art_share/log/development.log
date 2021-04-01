@@ -2016,3 +2016,850 @@ Processing by ArtworksController#update as */*
   Parameters: {"artwork"=>{"title"=>"Evan's art", "image_url"=>"Evan.com", "artist_id"=>"2"}, "id"=>"2"}
   [1m[36mArtwork Load (21.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
   ↳ app/controllers/artworks_controller.rb:26
+Started GET "/artworks" for ::1 at 2021-04-01 12:10:13 -0400
+  [1m[35m (99.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ArtworksController#index as */*
+  [1m[36mArtwork Load (333.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:6
+Completed 200 OK in 1125ms (Views: 95.9ms | ActiveRecord: 888.9ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:10:55 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (1.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (17.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (115.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (223.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Update (30.6ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "updated_at" = $2 WHERE "artworks"."id" = $3[0m  [["title", "Evan's art!!!"], ["updated_at", "2021-04-01 16:10:58.048356"], ["id", 2]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (95.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 2475ms (ActiveRecord: 1937.8ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:10:58 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (296.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (120.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (47.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (48.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (97.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 627ms (ActiveRecord: 609.7ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:10:59 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (172.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (96.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (22.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (46.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (346.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 701ms (ActiveRecord: 684.6ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:10:59 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (318.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (97.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (199.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (97.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (272.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 998ms (ActiveRecord: 986.7ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:00 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (170.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (22.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (175.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (46.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (117.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 548ms (ActiveRecord: 531.4ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:01 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (191.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (25.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (74.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (73.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (118.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 499ms (ActiveRecord: 483.4ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (50.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (121.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (47.2ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (47.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (68.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 354ms (ActiveRecord: 334.5ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:03 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (115.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (18.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (75.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (95.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (144.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 466ms (ActiveRecord: 448.3ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:03 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (112.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (98.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (72.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (45.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (68.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 415ms (ActiveRecord: 396.7ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (319.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (49.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (41.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (45.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (46.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 525ms (ActiveRecord: 503.2ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (19.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (26.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (67.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (25.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (17.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 176ms (ActiveRecord: 157.1ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (32.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (120.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (146.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (143.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (121.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 598ms (ActiveRecord: 564.1ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (36.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (93.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (197.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (101.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (118.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 564ms (ActiveRecord: 548.2ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:06 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (196.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (96.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (98.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (18.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (47.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 472ms (ActiveRecord: 456.4ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:06 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (41.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (128.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (43.2ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 252ms (ActiveRecord: 233.9ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:07 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (181.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (64.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (21.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (19.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (267.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 585ms (ActiveRecord: 554.7ms)
+
+
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:11:08 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Evan's art!!!", "image_url"=>"Evan.com"}, "id"=>"2"}
+  [1m[36mArtwork Load (99.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (17.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (21.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 2], ["id", 2], ["title", "Evan's art!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (421.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/2
+Completed 302 Found in 598ms (ActiveRecord: 582.3ms)
+
+
+  [1m[35m (48.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (49.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mArtwork Load (88.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (11.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mArtwork Destroy (122.1ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (49.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (22.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mArtwork Destroy (0.9ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mArtwork Destroy (1.1ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (19.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (19.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (98.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (20.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Julia"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Julia"], ["created_at", "2021-04-01 16:20:12.143202"], ["updated_at", "2021-04-01 16:20:12.143202"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Evan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (19.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Evan"], ["created_at", "2021-04-01 16:20:12.171403"], ["updated_at", "2021-04-01 16:20:12.171403"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtwork Exists (48.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."title" = $2 LIMIT $3[0m  [["artist_id", 8], ["title", "Art1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mArtwork Create (118.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "image_url", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Art1"], ["image_url", "img.com"], ["artist_id", 8], ["created_at", "2021-04-01 16:20:12.272800"], ["updated_at", "2021-04-01 16:20:12.272800"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (51.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."title" = $2 LIMIT $3[0m  [["artist_id", 9], ["title", "Art2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Load (21.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mArtwork Create (22.6ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "image_url", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Art2"], ["image_url", "img.com"], ["artist_id", 9], ["created_at", "2021-04-01 16:20:12.471387"], ["updated_at", "2021-04-01 16:20:12.471387"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (76.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+Started PATCH "/artworks/2" for ::1 at 2021-04-01 12:25:29 -0400
+  [1m[35m (44.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juliakim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Why??!!!"}, "id"=>"2"}
+  [1m[36mArtwork Load (1.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+Completed 404 Not Found in 316ms (ActiveRecord: 183.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artwork with 'id'=2:
+  app/controllers/artworks_controller.rb:26:in `update'
+
+Started GET "/artworks" for ::1 at 2021-04-01 12:25:42 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork"=>{"title"=>"Why??!!!"}}
+  [1m[36mArtwork Load (1.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:6
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/4" for ::1 at 2021-04-01 12:25:57 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/4"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/artworks/4" for ::1 at 2021-04-01 12:26:18 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Why??!!!"}, "id"=>"4"}
+  [1m[36mArtwork Load (19.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (45.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (47.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 8], ["id", 4], ["title", "Why??!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Update (10.3ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "updated_at" = $2 WHERE "artworks"."id" = $3[0m  [["title", "Why??!!!"], ["updated_at", "2021-04-01 16:26:18.841674"], ["id", 4]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/4
+Completed 302 Found in 268ms (ActiveRecord: 189.3ms)
+
+
+Started GET "/artworks/4" for ::1 at 2021-04-01 12:26:18 -0400
+Processing by ArtworksController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mArtwork Load (51.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 200 OK in 97ms (Views: 1.2ms | ActiveRecord: 92.0ms)
+
+
+Started GET "/artworks" for ::1 at 2021-04-01 12:45:24 -0400
+Processing by ArtworksController#index as */*
+  [1m[36mArtwork Load (37.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:6
+Completed 200 OK in 46ms (Views: 6.3ms | ActiveRecord: 37.4ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:01 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (17.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (19.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Update (14.3ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "image_url" = $2, "updated_at" = $3 WHERE "artworks"."id" = $4[0m  [["title", "Please Work!!!!!"], ["image_url", "Evan.com"], ["updated_at", "2021-04-01 16:46:01.898164"], ["id", 5]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 152ms (ActiveRecord: 97.0ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (20.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (18.1ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (22.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 99ms (ActiveRecord: 79.1ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (16.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (19.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (21.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 96ms (ActiveRecord: 76.9ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (21.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (22.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (8.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (21.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 123ms (ActiveRecord: 91.0ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (3.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (45.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 88ms (ActiveRecord: 70.1ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (68.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (23.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (37.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (44.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 198ms (ActiveRecord: 174.6ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:02 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (2.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (19.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 126ms (ActiveRecord: 45.9ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:03 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (17.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (21.2ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 96ms (ActiveRecord: 71.1ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:03 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (72.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (20.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (21.1ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (22.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 147ms (ActiveRecord: 136.5ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:03 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (44.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (20.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (66.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 148ms (ActiveRecord: 133.0ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (15.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (14.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (18.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 73ms (ActiveRecord: 50.0ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (78.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (35.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 173ms (ActiveRecord: 154.0ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (19.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (15.1ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (18.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 78ms (ActiveRecord: 54.2ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (16.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (19.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (19.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (19.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 100ms (ActiveRecord: 75.8ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (47.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (20.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (14.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (20.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 128ms (ActiveRecord: 103.2ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (16.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (20.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (18.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 94ms (ActiveRecord: 73.5ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:04 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (1.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (8.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (17.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 73ms (ActiveRecord: 45.9ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (13.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (20.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (11.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (15.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 128ms (ActiveRecord: 86.7ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (18.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 52ms (ActiveRecord: 41.1ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (60.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (24.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (46.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (22.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 190ms (ActiveRecord: 172.1ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:05 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"Please Work!!!!!", "image_url"=>"Evan.com"}, "id"=>"5"}
+  [1m[36mArtwork Load (21.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (22.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "Please Work!!!!!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 78ms (ActiveRecord: 65.7ms)
+
+
+Started PATCH "/artworks/5" for ::1 at 2021-04-01 12:46:31 -0400
+Processing by ArtworksController#update as */*
+  Parameters: {"artwork"=>{"title"=>"HelloWorld!"}, "id"=>"5"}
+  [1m[36mArtwork Load (3.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:26
+  [1m[35m (41.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"."id" != $2 AND "artworks"."title" = $3 LIMIT $4[0m  [["artist_id", 9], ["id", 5], ["title", "HelloWorld!"], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mUser Load (50.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[36mArtwork Update (33.8ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "updated_at" = $2 WHERE "artworks"."id" = $3[0m  [["title", "HelloWorld!"], ["updated_at", "2021-04-01 16:46:31.129732"], ["id", 5]]
+  ↳ app/controllers/artworks_controller.rb:28
+  [1m[35m (49.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:28
+Redirected to http://localhost:3000/artworks/5
+Completed 302 Found in 199ms (ActiveRecord: 179.2ms)
+
+
+Started GET "/artworks/5" for ::1 at 2021-04-01 12:46:31 -0400
+Processing by ArtworksController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mArtwork Load (2.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 2.9ms)
+
+

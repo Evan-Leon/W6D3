@@ -27,8 +27,8 @@ class ArtworksController < ApplicationController
         # debugger
      if artwork.update(artwork_params)
         # debugger
-        # redirect_to artwork_url(artwork)
-        render json: artwork
+        redirect_to artwork_url(artwork)
+        # render json: artwork
     else  
         render json: artwork.errors.full_messages, status: 422
     end
